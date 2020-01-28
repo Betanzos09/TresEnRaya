@@ -1,0 +1,41 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    background: rgb(32, 32, 32);
+    color: rgb(255, 255, 255);
+    font-family: 'PT Sans', sans-serif;
+}
+
+.titulo{
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    position: relative;
+}
+
+.tablaPuntuacion{
+    display: inline-block;
+    width: 100%;
+    position: relative;
+}
+
+.usuario, .maquina {
+    width:50%;
+    display: inline-block;
+    position: relative;
+    text-align: center;
+}
+
+.nombre, .puntuacion{
+    display: inline-block;
+}
+
+.puntuacion{
+    margin-left: 10px;
+}
+
+@media(max-width: 500px){
+    body{
+        font-size: 3.4vw;
+    }
+}
