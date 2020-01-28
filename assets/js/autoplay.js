@@ -1,6 +1,9 @@
 var tablero = new Array(3);
 var ganador;
 
+var puntosMaquina;
+var puntosJugador;
+
 
 /////////////////////////TABLERO/////////////////////////////
 function crearTablero(){
@@ -101,6 +104,10 @@ function compruebaColumnas(columna){
         return 0
 }
 
+function puntuacion(){
+    
+}
+
 
 /////////////////////////Nueva Partida/////////////////////////////
 function nuevaPartida(){
@@ -120,6 +127,8 @@ function nuevaPartida(){
 
 function autoplay(){
     ganador = 0;
+    puntosMaquina=0;
+    puntosJugador=0;
     crearTablero();
     inicializaTablero();
 }
