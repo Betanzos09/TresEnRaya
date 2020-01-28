@@ -34,25 +34,25 @@
     <div class="tableroJuego">
         <div class="filas">
             <div class="fila">
-                <div class="c00 casilla"></div>
-                <div class="c01 casilla"></div>
-                <div class="c02 casilla"></div>
+                <div id="c00" class="casilla" onclick="pinta(0,0,1)"></div>
+                <div id="c01" class="casilla" onclick="pinta(0,1,1)"></div>
+                <div id="c02" class="casilla" onclick="pinta(0,2,1)"></div>
             </div>
             <div class="fila">
-                <div class="c10 casilla"></div>
-                <div class="c11 casilla"></div>
-                <div class="c12 casilla"></div>
+                <div id="c10" class="casilla" onclick="pinta(1,0,1)"></div>
+                <div id="c11" class="casilla" onclick="pinta(1,1,1)"></div>
+                <div id="c12" class="casilla" onclick="pinta(1,2,1)"></div>
             </div>
             <div class="fila">
-                <div class="c20 casilla"></div>
-                <div class="c21 casilla"></div>
-                <div class="c22 casilla"></div>
+                <div id="c20" class="casilla" onclick="pinta(2,0,1)"></div>
+                <div id="c21" class="casilla" onclick="pinta(2,1,1)"></div>
+                <div id="c22" class="casilla" onclick="pinta(2,2,1)"></div>
             </div>
         </div>
     </div>
 
     <div class="zonaInferior">
-        <div class="nuevaPartida"><p><strong>Nueva Partida</strong></p></div>
+        <div class="nuevaPartida" onclick="nuevaPartida()"><p><strong>Nueva Partida</strong></p></div>
     </div>
 
     <script src="assets/js/autoplay.js"></script>
