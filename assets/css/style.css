@@ -54,6 +54,7 @@ body{
     height: 80px;
     display: inline-block;
     background: rgb(255, 255, 255);
+    transition: 0.1s;
 }
 
 .casilla:hover{
@@ -72,6 +73,7 @@ body{
     border-radius: 3%;
     width: 150px;
     border:1px solid rgb(255, 255, 255);
+    transition: 0.1s;
 }
 
 .nuevaPartida:hover{
