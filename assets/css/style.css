@@ -48,8 +48,72 @@ body{
     text-align: center;
     width: 60%;
     z-index: 100;
+    border-radius: 3px;
+    padding: 5px;
 }
 
+.botonRed, .botonGreen, .botonOrange{
+    width: 160px;
+    display: inline-block;
+    border-radius: 5px;
+    border:1px solid rgb(255, 255, 255);
+    margin: 10px 10px;
+    cursor: pointer;
+    transition: 0.1s;
+}
+
+.botonRed{
+    background: rgb(206, 76, 76);
+    position: relative;
+}
+
+.botonOrange{
+    background: tomato;
+    position: relative;
+}
+
+.botonGreen{
+    background: rgb(72, 219, 72);
+}
+
+.botonRed:hover{
+    color: rgb(206, 76, 76);
+    background: white;
+}
+
+.botonRed:after{
+    font-family: 'icomoon';
+    content: "\e9ff";
+    position: relative;
+    font-size: 25px;
+    bottom: 10px;
+}
+
+.botonGreen:after{
+    font-family: 'icomoon';
+    content: "\e9e1";
+    position: relative;
+    font-size: 25px;
+    bottom: 10px;
+}
+
+.botonGreen:hover{
+    color: rgb(72, 219, 72);
+    background: white;
+}
+
+.botonOrange:hover{
+    color: tomato;
+    background: white;
+}
+
+.botonOrange:after{
+    font-family: 'icomoon';
+    content: "\ea01";
+    position: relative;
+    font-size: 25px;
+    bottom: 10px;
+}
 
 /*Sección Tablero de Juego*/
 
@@ -103,9 +167,9 @@ body{
 }
 
 .nuevaPartida{
-    margin: 50px auto;
+    margin: 100px auto;
     text-align: center;
-    border-radius: 3%;
+    border-radius: 5px;
     width: 150px;
     border:1px solid rgb(255, 255, 255);
     transition: 0.1s;

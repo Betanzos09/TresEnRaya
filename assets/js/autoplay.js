@@ -117,11 +117,12 @@ function esGanador(){
 
     if(ganador!=0){
         actualizaPuntuacion();
-        muestraMensaje();
+        if (ganador ==1) ganadorJugador();
+        if (ganador ==2) ganadorMaquina();
     } 
 
     if(tableroLleno()){
-        muestraMensaje();
+        tablas();
     }
     
 }
@@ -174,6 +175,7 @@ function actualizaPuntuacion(){
 /////////////////////////NUEVA PARTIDA/////////////////////////////
 function nuevaPartida(){
     if (!tableroLleno() && ganador == 0){
+        noFinalizada();
         //alert("La partida no ha finalizado");
     }
 
@@ -187,33 +189,47 @@ function nuevaPartida(){
 }
 
 /////////////////////////MENSAJE/////////////////////////////
-function muestraMensaje(){
-
-    mensajeH1 = "<h1>Ganador ";
-    mensajeH2 = "<h2>Felicidades ";
-
-    if(ganador==1){
-        mensajeH1 = mensajeH1 + "Jugador</h1>"
-        mensajeH2 = mensajeH2 + "Jugador</h2>"
-    }
-    else if(ganador==2){
-        mensajeH1 = mensajeH1 + "Maquina</h1>"
-        mensajeH2 = mensajeH2 + "Maquina</h2>"
-    }
-    else{
-        mensajeH1 = "<h1>Tablas</h1>"
-        mensajeH2 = "<h2>Pulse en <strong>Nueva Partida</strong></h2>";
-    }
-
+function muestraMensaje(contenidoMensaje){
     mensaje = document.getElementById("mensaje");
     mensaje.style.display = "block";
-    mensaje.innerHTML = mensajeH1 + mensajeH2;
+    mensaje.innerHTML = contenidoMensaje;
 }
 
 function ocultaMensaje(){
     mensaje = document.getElementById("mensaje");
     mensaje.style.display = "none";
     mensaje.innerHTML = "";
+}
+
+function nunca(){
+    contenidoMensaje= "<h1>Tampoco te canses demasiado</h1><h2>...</h2>";
+    muestraMensaje(contenidoMensaje);
+}
+
+function vale(){
+    contenidoMensaje = "<h1>Eres patético</h1><h2>...</h2>";
+    muestraMensaje(contenidoMensaje);
+}
+
+function noFinalizada(){
+    contenidoMensaje = "<h1>Debes de terminar lo que empiezas</h1><div onclick='ocultaMensaje()' class='botonOrange'><h3>OK</h3></div>";
+    muestraMensaje(contenidoMensaje);
+}
+
+function ganadorJugador(){
+    contenidoMensaje = "<h1>Felicidades Jugador</h1><h2>Eres más listo de lo que pareces</h2>"
+    muestraMensaje(contenidoMensaje);
+}
+
+
+function ganadorMaquina(){
+    contenidoMensaje = "<h1>Postrate ante mi!</h1><div onclick='nunca()' class='botonRed'><h3>Nunca!</h3></div><div onclick='vale()' class='botonGreen'><h3>Vale!</h3></div>"
+    muestraMensaje(contenidoMensaje);
+}
+
+function tablas(){
+    contenidoMensaje = "<h1>Tablas</h1><h2>Si quieres continuar pulsa en <strong>Nueva Partida</strong></h2>"; 
+    muestraMensaje(contenidoMensaje);
 }
 
 /////////////////////////AUTOPLAY/////////////////////////////
