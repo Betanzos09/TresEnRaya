@@ -117,8 +117,12 @@ function esGanador(){
 
     if(ganador!=0){
         actualizaPuntuacion();
-        //alert("El jugador "+ ganador + " es el ganador");
+        muestraMensaje();
     } 
+
+    if(tableroLleno()){
+        muestraMensaje();
+    }
     
 }
 
@@ -167,7 +171,7 @@ function actualizaPuntuacion(){
 }
 
 
-/////////////////////////Nueva Partida/////////////////////////////
+/////////////////////////NUEVA PARTIDA/////////////////////////////
 function nuevaPartida(){
     if (!tableroLleno() && ganador == 0){
         //alert("La partida no ha finalizado");
@@ -178,9 +182,39 @@ function nuevaPartida(){
         ganador = 0;
         turnoSiguiente = 1;
         inicializaTablero();
+        ocultaMensaje();
     }
 }
 
+/////////////////////////MENSAJE/////////////////////////////
+function muestraMensaje(){
+
+    mensajeH1 = "<h1>Ganador ";
+    mensajeH2 = "<h2>Felicidades ";
+
+    if(ganador==1){
+        mensajeH1 = mensajeH1 + "Jugador</h1>"
+        mensajeH2 = mensajeH2 + "Jugador</h2>"
+    }
+    else if(ganador==2){
+        mensajeH1 = mensajeH1 + "Maquina</h1>"
+        mensajeH2 = mensajeH2 + "Maquina</h2>"
+    }
+    else{
+        mensajeH1 = "<h1>Tablas</h1>"
+        mensajeH2 = "<h2>Pulse en <strong>Nueva Partida</strong></h2>";
+    }
+
+    mensaje = document.getElementById("mensaje");
+    mensaje.style.display = "block";
+    mensaje.innerHTML = mensajeH1 + mensajeH2;
+}
+
+function ocultaMensaje(){
+    mensaje = document.getElementById("mensaje");
+    mensaje.style.display = "none";
+    mensaje.innerHTML = "";
+}
 
 /////////////////////////AUTOPLAY/////////////////////////////
 
@@ -191,6 +225,7 @@ function autoplay(){
 
     puntosMaquina=0;
     puntosJugador=0;
+
     crearTablero();
     inicializaTablero();
     turnoMaquina();

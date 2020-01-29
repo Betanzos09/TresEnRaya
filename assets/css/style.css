@@ -4,6 +4,7 @@ body{
     background: rgb(32, 32, 32);
     color: rgb(255, 255, 255);
     font-family: 'PT Sans', sans-serif;
+    position: relative;
 }
 
 /*Sección Título*/
@@ -37,6 +38,18 @@ body{
 .puntuacion{
     margin-left: 10px;
 }
+
+/*Sección mensaje*/
+#mensaje{
+    top: 40%;
+    left: 20%;
+    position: absolute;
+    background: rgba(68, 67, 67,0.9);
+    text-align: center;
+    width: 60%;
+    z-index: 100;
+}
+
 
 /*Sección Tablero de Juego*/
 
@@ -114,5 +127,11 @@ body{
 
     .nuevaPartida{
         font-size: 4.5vw;
+    }
+
+    .mensaje{
+        top: 40%;
+        left: 0px;
+        width: 100%;
     }
 }
