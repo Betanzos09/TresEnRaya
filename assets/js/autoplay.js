@@ -26,7 +26,7 @@ function inicializaTablero(){
 function muestraTablero(){
     tablero.forEach(fila => {
         fila.forEach(celda => {
-            alert(celda);
+            //alert(celda);
         });
     });
 }
@@ -84,7 +84,14 @@ function esGanador(){
         }
     }
 
-    if(ganador!=0) alert("El jugador "+ ganador + " es el ganador")
+    if(ganador==0){
+        ganador = compruebaDiagonal()
+    }
+
+    if(ganador!=0){
+        actualizaPuntuacion();
+        //alert("El jugador "+ ganador + " es el ganador");
+    } 
     
 }
 
@@ -104,7 +111,31 @@ function compruebaColumnas(columna){
         return 0
 }
 
-function puntuacion(){
+function compruebaDiagonal(){
+    if(tablero[0][0] == tablero[1][1] && tablero[0][0] == tablero[2][2] && tablero[1][1] == tablero[2][2] && tablero[0][0]!=0){
+        return tablero[0][0];
+    }
+
+    else if (tablero[0][2] == tablero[1][1] && tablero[0][2] == tablero[2][0] && tablero[1][1] == tablero[2][0] && tablero[0][2]!=0) {
+        return tablero[0][2];
+    } 
+    else
+        return 0
+}
+
+function actualizaPuntuacion(){
+    if (ganador == 1){
+        puntuacion = document.getElementById("puntosJugador");
+        puntosJugador = puntosJugador+1;
+        puntuacion.innerHTML = "<h2>"+puntosJugador+" puntos</h2>"
+    }
+
+    if (ganador == 2){
+        puntuacion = document.getElementById("puntosMaquina");
+        puntosMaquina= puntosMaquina+1;
+        puntuacion.innerHTML = "<h2>"+puntosMaquina+" puntos</h2>"
+    }
+    
     
 }
 
@@ -112,11 +143,11 @@ function puntuacion(){
 /////////////////////////Nueva Partida/////////////////////////////
 function nuevaPartida(){
     if (!tableroLleno() && ganador == 0){
-        alert("La partida no ha finalizado");
+        //alert("La partida no ha finalizado");
     }
 
     else{
-        alert("Va a comenzar una nueva partida. Los puntos se mantienen");
+        //alert("Va a comenzar una nueva partida. Los puntos se mantienen");
         ganador = 0;
         inicializaTablero();
     }
