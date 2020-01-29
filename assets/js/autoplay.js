@@ -65,8 +65,6 @@ function pinta(fila, columna, valor){
         }
         esGanador();
     }
-
-    if(turnoSiguiente == 2) turnoMaquina();
 }
 
 ///////////////////////////GESTION TURNOS//////////////////////////////
@@ -76,13 +74,21 @@ function siguienteTurno(){
 }
 
 function turnoMaquina(){
+    setInterval(function(){
+        while(turnoSiguiente == 2 && ganador == 0 && !tableroLleno()){
+            posicion = posicionRandom();/**Crea posiciones aleatorias */
+            fila = posicion[0];
+            columna = posicion[1];
+            valor = 2;
+            pinta(fila, columna, valor);
+        }
+    },1000);
+}
 
-    /** Elige una casilla */
-
-    /** Intenta pintar */
-
-    /** Si el turno pasa al Jugador esta función finaliza */
-
+///////////////////////////MAQUINA//////////////////////////////
+function posicionRandom(){
+    var posicion = [Math.floor(Math.random() * 3), Math.floor(Math.random() * 3)];
+    return posicion
 }
 
 /////////////////////////GANADOR/////////////////////////////
@@ -170,6 +176,7 @@ function nuevaPartida(){
     else{
         //alert("Va a comenzar una nueva partida. Los puntos se mantienen");
         ganador = 0;
+        turnoSiguiente = 1;
         inicializaTablero();
     }
 }
@@ -186,6 +193,7 @@ function autoplay(){
     puntosJugador=0;
     crearTablero();
     inicializaTablero();
+    turnoMaquina();
 }
 
 autoplay();
