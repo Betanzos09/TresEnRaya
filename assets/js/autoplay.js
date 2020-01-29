@@ -4,6 +4,8 @@ var ganador;
 var puntosMaquina;
 var puntosJugador;
 
+var turnoSiguiente;
+
 
 /////////////////////////TABLERO/////////////////////////////
 function crearTablero(){
@@ -51,20 +53,39 @@ function compruebaCelda(fila, columna){
     else false
 }
 
-function pinta(fila, columna,valor){
-    if(ganador == 0){
+function pinta(fila, columna, valor){
+    if(ganador == 0 && turnoSiguiente == valor){
         if (compruebaCelda(fila, columna)){
             tablero[fila][columna] = valor;
             celda = document.getElementById("c"+fila+columna);
             celda.style.background = "";
-            if (valor == 1) celda.innerHTML = "<div class='unaX'></div>"
-            if (valor == 2) celda.innerHTML = "<div class='un0'></div>"
+            if (valor == 1) celda.innerHTML = "<div class='unaX'></div>";
+            if (valor == 2) celda.innerHTML = "<div class='un0'></div>";
+            siguienteTurno();
         }
         esGanador();
     }
+
+    if(turnoSiguiente == 2) turnoMaquina();
 }
 
-/////////////////////////Nuevo Ganador/////////////////////////////
+///////////////////////////GESTION TURNOS//////////////////////////////
+function siguienteTurno(){
+    if (turnoSiguiente == 1) turnoSiguiente = 2;
+    else turnoSiguiente = 1;
+}
+
+function turnoMaquina(){
+
+    /** Elige una casilla */
+
+    /** Intenta pintar */
+
+    /** Si el turno pasa al Jugador esta función finaliza */
+
+}
+
+/////////////////////////GANADOR/////////////////////////////
 function esGanador(){
     //comprueba filas
     for (let fila = 0; fila < tablero.length; fila++) {
@@ -158,6 +179,9 @@ function nuevaPartida(){
 
 function autoplay(){
     ganador = 0;
+    
+    turnoSiguiente = 1;
+
     puntosMaquina=0;
     puntosJugador=0;
     crearTablero();
