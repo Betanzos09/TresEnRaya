@@ -29,7 +29,6 @@ function algoritmoMinMax(){
 
 function funcionMax(tableroActual,profundidadActual,utilidadArray){
     let utilidadLocal = getUtilidadTablero(tableroActual);
-    //alert("tablero actual max "+tableroActual + " utilidad " + utilidadLocal);
     if(utilidadLocal == -1 || utilidadLocal == 1){
         utilidadArray.push(utilidadLocal);
     }
@@ -50,7 +49,6 @@ function funcionMax(tableroActual,profundidadActual,utilidadArray){
             funcionMin(tablerosPosibles[index],profundidadActual,utilidadesLocales);
             profundidadActual = profundidadActual -1;
             let utilidadLocalFinal = utilidadesLocales[0];
-            //alert("desde funcion max "+utilidadesLocales);
             for (let index = 0; index < utilidadesLocales.length; index++) {
                 if(utilidadesLocales[index]>=utilidadLocalFinal)
                     utilidadLocalFinal = utilidadesLocales[index];
@@ -61,15 +59,13 @@ function funcionMax(tableroActual,profundidadActual,utilidadArray){
             utilidadesPosibles.push(utilidadLocalFinal)
         }
 
-        //alert("utilidades posibles max :"+utilidadesPosibles)
-        //alert("posiciones posibles :" + posicionesPosibles)
 
         let utilidadFinal = utilidadesPosibles[0];
 
         let posicionFinal = posicionesPosibles[0];
 
         for (let index = 0; index < utilidadesPosibles.length; index++) {
-            if(utilidadesPosibles[index]<=utilidadFinal){
+            if(utilidadesPosibles[index]<utilidadFinal){
                 utilidadFinal = utilidadesPosibles[index];
                 posicionFinal = posicionesPosibles[index];
             }
@@ -77,18 +73,15 @@ function funcionMax(tableroActual,profundidadActual,utilidadArray){
                 
         }
         utilidadArray.push(utilidadFinal);
-        //alert("utilidad final max "+utilidadFinal);
         return posicionFinal;
     }
 }
 
 function funcionMin(tableroActual,profundidadActual,utilidadArray){
     let utilidadLocal = getUtilidadTablero(tableroActual);
-    //alert(tableroActual);
 
     if(utilidadLocal == -1 || utilidadLocal == 1){
         utilidadArray.push(utilidadLocal);
-        //alert("posible ganador maquina "+tableroActual);
     }
         
 
@@ -109,7 +102,6 @@ function funcionMin(tableroActual,profundidadActual,utilidadArray){
             profundidadActual = profundidadActual -1;
             let utilidadLocalFinal = utilidadesLocales[0];
 
-            //alert("desde funcion min "+utilidadesLocales);
             for (let index = 0; index < utilidadesLocales.length; index++) {
                 if(utilidadesLocales[index]>=utilidadLocalFinal)
                     utilidadLocalFinal = utilidadesLocales[index];
@@ -120,7 +112,6 @@ function funcionMin(tableroActual,profundidadActual,utilidadArray){
             utilidadesPosibles.push(utilidadLocalFinal)
         }
 
-        //alert("utilidades posibles min:"+utilidadesPosibles)
 
         let utilidadFinal = utilidadesPosibles[0];
 
@@ -133,7 +124,6 @@ function funcionMin(tableroActual,profundidadActual,utilidadArray){
                 
         }
         utilidadArray.push(utilidadFinal);
-        //alert("utilidad final min "+utilidadFinal);
         return posicionFinal;
     }
 }
