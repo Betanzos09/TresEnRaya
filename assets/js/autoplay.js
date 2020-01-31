@@ -160,13 +160,13 @@ function actualizaPuntuacion(){
     if (ganador == 1){
         puntuacion = document.getElementById("puntosJugador");
         puntosJugador = puntosJugador+1;
-        puntuacion.innerHTML = "<h2>"+puntosJugador+" puntos</h2>"
+        puntuacion.innerHTML = "<h2 class='zoom'>"+puntosJugador+" puntos</h2>"
     }
 
     if (ganador == -1){
         puntuacion = document.getElementById("puntosMaquina");
         puntosMaquina= puntosMaquina+1;
-        puntuacion.innerHTML = "<h2>"+puntosMaquina+" puntos</h2>"
+        puntuacion.innerHTML = "<h2 class='zoom'>"+puntosMaquina+" puntos</h2>"
     }
     
     

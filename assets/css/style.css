@@ -39,6 +39,34 @@ body{
     margin-left: 10px;
 }
 
+.zoom{
+    animation: 1.2s zoom 1;
+}
+
+@keyframes zoom{
+
+    30%{
+        color: rgb(206, 76, 76);
+        transform: 
+            perspective(300px)
+            translateZ(80px)
+    }
+
+    60%{
+        color: rgb(206, 76, 76);
+        transform: 
+            perspective(300px)
+            translateZ(0px)
+    }
+
+    100%{
+        color: rgb(255, 255, 255);
+        transform: 
+            perspective(300px)
+    }
+
+}
+
 /*Sección mensaje*/
 #mensaje{
     top: 40%;
