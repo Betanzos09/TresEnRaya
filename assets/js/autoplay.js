@@ -219,7 +219,7 @@ function noFinalizada(){
 }
 
 function ganadorJugador(){
-    contenidoMensaje = "<h1>Felicidades Jugador</h1><h2>Eres más listo de lo que pareces... ahora verás</h2>"
+    contenidoMensaje = "<h1>Felicidades Jugador</h1><h2>Eres más listo de lo que pareces...</h2><h2>Ahora verás</h2>"
     muestraMensaje(contenidoMensaje);
 }
 
@@ -230,7 +230,7 @@ function ganadorMaquina(){
 }
 
 function tablas(){
-    contenidoMensaje = "<h1>Tablas</h1><h2>Si quieres continuar pulsa en <strong>Nueva Partida</strong></h2>"; 
+    contenidoMensaje = "<h1>Tablas</h1><h2>Pulsa en Nueva Partida para continuar</h2>"; 
     muestraMensaje(contenidoMensaje);
 }
 
