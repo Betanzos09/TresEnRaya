@@ -122,7 +122,7 @@ function esGanador(){
         if (ganador ==-1) ganadorMaquina();
     } 
 
-    if(tableroLleno()){
+    else if(tableroLleno()){
         tablas();
     }
     
@@ -177,11 +177,9 @@ function actualizaPuntuacion(){
 function nuevaPartida(){
     if (!tableroLleno() && ganador == 0){
         noFinalizada();
-        //alert("La partida no ha finalizado");
     }
 
     else{
-        //alert("Va a comenzar una nueva partida. Los puntos se mantienen");
         ganador = 0;
         turnoSiguiente = 1;
         inicializaTablero();
