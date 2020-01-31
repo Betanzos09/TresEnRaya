@@ -193,8 +193,8 @@ body{
         font-size: 4.5vw;
     }
 
-    .mensaje{
-        top: 40%;
+    #mensaje{
+        top: 30%;
         left: 0px;
         width: 100%;
     }
