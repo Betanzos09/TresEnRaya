@@ -209,6 +209,7 @@ function nunca(){
 }
 
 function vale(){
+    profundidad = 3;
     contenidoMensaje = "<h1>Eres patético</h1><h2>...</h2>";
     muestraMensaje(contenidoMensaje);
 }
