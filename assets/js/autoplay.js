@@ -60,7 +60,7 @@ function pinta(fila, columna, valor){
             celda = document.getElementById("c"+fila+columna);
             celda.style.background = "";
             if (valor == 1) celda.innerHTML = "<div class='unaX'></div>";
-            if (valor == 2) celda.innerHTML = "<div class='un0'></div>";
+            if (valor == -1) celda.innerHTML = "<div class='un0'></div>";
             siguienteTurno();
         }
         esGanador();
@@ -69,17 +69,18 @@ function pinta(fila, columna, valor){
 
 ///////////////////////////GESTION TURNOS//////////////////////////////
 function siguienteTurno(){
-    if (turnoSiguiente == 1) turnoSiguiente = 2;
+    if (turnoSiguiente == 1) turnoSiguiente = -1;
     else turnoSiguiente = 1;
 }
 
 function turnoMaquina(){
     setInterval(function(){
-        while(turnoSiguiente == 2 && ganador == 0 && !tableroLleno()){
-            posicion = posicionRandom();/**Crea posiciones aleatorias */
+        while(turnoSiguiente == -1 && ganador == 0 && !tableroLleno()){
+            //posicion = posicionRandom();/**Crea posiciones aleatorias */
+            posicion = algoritmoMinMax();/**Llama al algoritmo MinMax */
             fila = posicion[0];
             columna = posicion[1];
-            valor = 2;
+            valor = -1;
             pinta(fila, columna, valor);
         }
     },1000);
@@ -118,7 +119,7 @@ function esGanador(){
     if(ganador!=0){
         actualizaPuntuacion();
         if (ganador ==1) ganadorJugador();
-        if (ganador ==2) ganadorMaquina();
+        if (ganador ==-1) ganadorMaquina();
     } 
 
     if(tableroLleno()){
@@ -162,7 +163,7 @@ function actualizaPuntuacion(){
         puntuacion.innerHTML = "<h2>"+puntosJugador+" puntos</h2>"
     }
 
-    if (ganador == 2){
+    if (ganador == -1){
         puntuacion = document.getElementById("puntosMaquina");
         puntosMaquina= puntosMaquina+1;
         puntuacion.innerHTML = "<h2>"+puntosMaquina+" puntos</h2>"
@@ -245,6 +246,7 @@ function autoplay(){
     crearTablero();
     inicializaTablero();
     turnoMaquina();
+    //algoritmoMinMax();
 }
 
 autoplay();
