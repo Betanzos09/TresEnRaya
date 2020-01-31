@@ -69,7 +69,10 @@ function funcionMax(tableroActual,profundidadActual,utilidadArray){
                 utilidadFinal = utilidadesPosibles[index];
                 posicionFinal = posicionesPosibles[index];
             }
-                
+            else if(utilidadesPosibles[index]==utilidadFinal && Math.floor(Math.random() * 2)==0){
+                utilidadFinal = utilidadesPosibles[index];
+                posicionFinal = posicionesPosibles[index];
+            }     
                 
         }
         utilidadArray.push(utilidadFinal);
