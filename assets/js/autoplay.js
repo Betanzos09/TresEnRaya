@@ -118,7 +118,10 @@ function esGanador(){
 
     if(ganador!=0){
         actualizaPuntuacion();
-        if (ganador ==1) ganadorJugador();
+        if (ganador ==1){
+            ganadorJugador();
+            profundidad =8;
+        } 
         if (ganador ==-1) ganadorMaquina();
     } 
 
@@ -216,7 +219,7 @@ function noFinalizada(){
 }
 
 function ganadorJugador(){
-    contenidoMensaje = "<h1>Felicidades Jugador</h1><h2>Eres más listo de lo que pareces</h2>"
+    contenidoMensaje = "<h1>Felicidades Jugador</h1><h2>Eres más listo de lo que pareces... ahora verás</h2>"
     muestraMensaje(contenidoMensaje);
 }
 
