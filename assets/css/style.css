@@ -1,4 +1,4 @@
-body{
+body {
     margin: 0px;
     padding: 0px;
     background: rgb(32, 32, 32);
@@ -7,72 +7,72 @@ body{
     position: relative;
 }
 
+
 /*Sección Título*/
 
-.titulo{
+.titulo {
     display: inline-block;
     width: 100%;
     text-align: center;
     position: relative;
 }
+
 
 /*Sección Tabla Puntuación*/
 
-.tablaPuntuacion{
+.tablaPuntuacion {
     display: inline-block;
     width: 100%;
     position: relative;
+    /*Elimina los espacios en blanco*/
+    font-size: 0;
 }
 
-.usuario, .maquina {
-    width:50%;
+.usuario,
+.maquina {
+    width: 50%;
     display: inline-block;
     position: relative;
     text-align: center;
+    font-size: 15px;
 }
 
-.nombre, .puntuacion{
+.nombre,
+.puntuacion {
     display: inline-block;
 }
 
-.puntuacion{
+.puntuacion {
     margin-left: 10px;
 }
 
-.zoom{
+.zoom {
     animation: 1.2s zoom 1;
 }
 
-@keyframes zoom{
-
-    30%{
+@keyframes zoom {
+    30% {
         color: rgb(206, 76, 76);
-        transform: 
-            perspective(300px)
-            translateZ(80px)
+        transform: perspective(300px) translateZ(80px)
     }
-
-    60%{
+    60% {
         color: rgb(206, 76, 76);
-        transform: 
-            perspective(300px)
-            translateZ(0px)
+        transform: perspective(300px) translateZ(0px)
     }
-
-    100%{
+    100% {
         color: rgb(255, 255, 255);
-        transform: 
-            perspective(300px)
+        transform: perspective(300px)
     }
-
 }
 
+
 /*Sección mensaje*/
-#mensaje{
+
+#mensaje {
     top: 40%;
     left: 20%;
     position: absolute;
-    background: rgba(68, 67, 67,0.9);
+    background: rgba(68, 67, 67, 0.9);
     text-align: center;
     width: 60%;
     z-index: 100;
@@ -80,36 +80,38 @@ body{
     padding: 5px;
 }
 
-.botonRed, .botonGreen, .botonOrange{
+.botonRed,
+.botonGreen,
+.botonOrange {
     width: 160px;
     display: inline-block;
     border-radius: 5px;
-    border:1px solid rgb(255, 255, 255);
+    border: 1px solid rgb(255, 255, 255);
     margin: 10px 10px;
     cursor: pointer;
     transition: 0.1s;
 }
 
-.botonRed{
+.botonRed {
     background: rgb(206, 76, 76);
     position: relative;
 }
 
-.botonOrange{
+.botonOrange {
     background: tomato;
     position: relative;
 }
 
-.botonGreen{
+.botonGreen {
     background: rgb(72, 219, 72);
 }
 
-.botonRed:hover{
+.botonRed:hover {
     color: rgb(206, 76, 76);
     background: white;
 }
 
-.botonRed:after{
+.botonRed:after {
     font-family: 'icomoon';
     content: "\e9ff";
     position: relative;
@@ -117,7 +119,7 @@ body{
     bottom: 10px;
 }
 
-.botonGreen:after{
+.botonGreen:after {
     font-family: 'icomoon';
     content: "\e9e1";
     position: relative;
@@ -125,17 +127,17 @@ body{
     bottom: 10px;
 }
 
-.botonGreen:hover{
+.botonGreen:hover {
     color: rgb(72, 219, 72);
     background: white;
 }
 
-.botonOrange:hover{
+.botonOrange:hover {
     color: tomato;
     background: white;
 }
 
-.botonOrange:after{
+.botonOrange:after {
     font-family: 'icomoon';
     content: "\ea01";
     position: relative;
@@ -143,18 +145,19 @@ body{
     bottom: 10px;
 }
 
+
 /*Sección Tablero de Juego*/
 
-.tableroJuego{
+.tableroJuego {
     width: 100%;
 }
 
-.filas{
+.filas {
     width: 100%;
     text-align: center;
 }
 
-.casilla{
+.casilla {
     width: 80px;
     height: 80px;
     display: inline-block;
@@ -162,16 +165,17 @@ body{
     transition: 0.1s;
 }
 
-.casilla:hover{
+.casilla:hover {
     background: tomato;
     cursor: pointer;
 }
 
-.unaX,.un0{
+.unaX,
+.un0 {
     position: absolute;
 }
 
-.unaX:before{
+.unaX:before {
     font-family: 'icomoon';
     content: "\ea0f";
     color: rgb(32, 32, 32);
@@ -180,7 +184,7 @@ body{
     margin: 0 5px;
 }
 
-.un0:before{
+.un0:before {
     font-family: 'icomoon';
     content: "\ea56";
     color: rgb(32, 32, 32);
@@ -189,39 +193,40 @@ body{
     margin: 0 5px;
 }
 
+
 /*Zona Inferior*/
-.zonaInferior{
+
+.zonaInferior {
     width: 100%;
 }
 
-.nuevaPartida{
+.nuevaPartida {
     margin: 100px auto;
     text-align: center;
     border-radius: 5px;
     width: 150px;
-    border:1px solid rgb(255, 255, 255);
+    border: 1px solid rgb(255, 255, 255);
     transition: 0.1s;
 }
 
-.nuevaPartida:hover{
+.nuevaPartida:hover {
     color: rgb(32, 32, 32);
-    background:  rgb(255, 255, 255);
-    border:1px solid rgb(255, 255, 255);
+    background: rgb(255, 255, 255);
+    border: 1px solid rgb(255, 255, 255);
     cursor: pointer;
 }
 
+
 /*Medias*/
 
-@media(max-width: 500px){
-    body{
+@media(max-width: 500px) {
+    body {
         font-size: 3.4vw;
     }
-
-    .nuevaPartida{
+    .nuevaPartida {
         font-size: 4.5vw;
     }
-
-    #mensaje{
+    #mensaje {
         top: 30%;
         left: 0px;
         width: 100%;
